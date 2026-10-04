@@ -247,7 +247,7 @@ public class Benchmark {
 
     private static Result runRandomAccessArray(int[] data) {
         Metrics metrics = new Metrics();
-        DynamicArray array = new DynamicArray(metrics);
+        IntList array = new DynamicArray(metrics);
 
         for (int value : data) {
             array.add(value);
@@ -271,7 +271,7 @@ public class Benchmark {
 
     private static Result runRandomAccessList(int[] data) {
         Metrics metrics = new Metrics();
-        MyLinkedList list = new MyLinkedList(metrics);
+        IntList list = new MyLinkedList(metrics);
 
         for (int value : data) {
             list.add(value);
