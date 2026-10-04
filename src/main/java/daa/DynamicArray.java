@@ -1,6 +1,6 @@
 package daa;
 
-public class DynamicArray {
+public class DynamicArray implements IntList {
 
     private int[] data;
     private int size;
