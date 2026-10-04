@@ -130,4 +130,8 @@ public class MinHeap {
     public int size() {
         return size;
     }
+
+    int valueAt(int index) {
+        return heap[index];
+    }
 }

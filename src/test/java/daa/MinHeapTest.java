@@ -107,4 +107,32 @@ public class MinHeapTest {
             assertEquals(expected, heap.extractMin());
         }
     }
+
+    @Test
+    void heapPropertyAfterEveryOperation() {
+        Metrics metrics = new Metrics();
+        MinHeap heap = new MinHeap(metrics);
+
+        int[] values = {40, 10, 30, 5, 20, 50, 1, 25};
+
+        for (int value : values) {
+            heap.insert(value);
+            checkHeapProperty(heap);
+        }
+
+        while (heap.size() > 0) {
+            heap.extractMin();
+            checkHeapProperty(heap);
+        }
+    }
+
+    private void checkHeapProperty(MinHeap heap) {
+        for (int child = 1; child < heap.size(); child++) {
+            int parent = (child - 1) / 2;
+
+            assertTrue(
+                    heap.valueAt(parent) <= heap.valueAt(child)
+            );
+        }
+    }
 }
